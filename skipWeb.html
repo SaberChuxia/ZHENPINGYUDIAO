@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+
+<head>
+<meta charset="utf-8">
+<title>跳转全屏</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+var $goDownload = $('#goDownload'),
+$maskWrap = $('#maskWrap'),
+$closeNote = $('#closeNote');
+var is_weixin = (function(){return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1})();
+if (is_weixin) {
+$goDownload.on('click',function(e){
+$('#goDownload').attr('href','javascript:void(0);');
+$maskWrap.css('display','block')
+})
+$closeNote.on('click',function(){
+$maskWrap.css('display','none');
+})
+}
+</script>
+</head>
+<body>
+
+
+<a id="goDownload" href="https://file5b202b6716e0.vrh5.cn/v3/idea/ddP4J3pj">点击下载安卓APP</a>
+
+<div class="maskWrap" id="maskWrap">
+<div class="mask">
+<div class="note" >
+<p>1.点击右上角<img class="icon icon1" src="img/icon1.png" alt="菜单" />按钮</p>
+<p>2.选择 <img class="icon" src="img/icon2.png" alt="在浏览器中打开" /></p>
+</div>
+<span class="closeNote" id="closeNote">X</span>
+</div>
+</div>
+</body>
+</html>
